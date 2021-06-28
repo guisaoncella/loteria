@@ -81,14 +81,16 @@
                 }
                 
                 var final
-                if (valores.indexOf(n.toString()) == -1){
-                    if (n < 10){
-                        final = '0' + n
-                    }else{
-                        final = n.toString()
-                    }
+                if (n < 10){
+                    final = '0' + n
+                }else{
+                    final = n.toString()
+                }
+                if (valores.indexOf(final) == -1){
                     valores.push(final)
                     i += 1
+                }else{
+                    continue
                 }
             }
             valores.sort().reverse()
