@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste</title>
+    <title>Gerador de Numeros</title>
+    <link rel="icon" href="favicon.ico">
     <style>
         body{
             background-color: #7EC8E3;
@@ -24,6 +25,7 @@
         p{
             text-align: center;
             margin-left: 1vw;
+            margin-top: 1vw;
             background-color: #308a57; 
             font-weight: bolder;
             color: #fff;
@@ -64,7 +66,9 @@
                 y = 6
             }else if (x == 2){
                 y = 5
-            }   
+            }else if (x == 3){
+                y = 15
+            }
             var valores = []
             var i = 0
             while(i < y){
@@ -72,6 +76,8 @@
                     var n = gerar_numeros(60)
                 }else if (x == 2){
                     var n = gerar_numeros(80)
+                }else if (x == 3){
+                    var n = gerar_numeros(25)
                 }
                 
                 var final
@@ -92,6 +98,8 @@
                     id = 's'+i
                 }else if (x == 2){
                     id = 'q'+i
+                }else if (x == 3){
+                    id = 'l'+i
                 }
                 document.getElementById(id).innerHTML = valores.pop()
             }
@@ -118,5 +126,26 @@
         <p id="q5">00</p>
     </div>
     <button onclick="atualizar_numeros(2)">ATUALIZAR</button>
+    <h1>LOTOFÁCIL</h1>
+    <div>
+        <p id="l1">00</p>
+        <p id="l2">00</p>
+        <p id="l3">00</p>
+        <p id="l4">00</p>
+        <p id="l5">00</p>
+        <br>
+        <p id="l6">00</p>
+        <p id="l7">00</p>
+        <p id="l8">00</p>
+        <p id="l9">00</p>
+        <p id="l10">00</p>
+        <br>
+        <p id="l11">00</p>
+        <p id="l12">00</p>
+        <p id="l13">00</p>
+        <p id="l14">00</p>
+        <p id="l15">00</p>
+    </div>
+    <button onclick="atualizar_numeros(3)">ATUALIZAR</button>
 </body>
 </html>
