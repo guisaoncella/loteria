@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <style>
+        body{
+            background-color: #7EC8E3;
+        }
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        h1 {
+            background-color:#7EC8E3;
+            color: #fff;
+            text-align: center;
+            font-weight: bolder;
+            padding: 1vw;
+            font-size: 8vw;
+        }
+        p{
+            text-align: center;
+            margin-left: 1vw;
+            background-color: #308a57; 
+            font-weight: bolder;
+            color: #fff;
+            font-size: 10vw;
+            width: 12vw;
+            padding: 1vw;
+            border: #308a57;
+            border-radius: 100%;
+            display: inline-block;
+            box-shadow: rgba(0, 0, 0, 0.438) 5px 5px 5px;
+        }
+        button{
+            margin: 5vh 10vw;
+            width: 80vw;
+            display: inherit;
+            font-weight: bolder;
+            padding: 1vw;
+            background-color: #000C66;
+            color: #fff;
+            text-align: center;
+            font-size: 5vw;
+            border: solid 2px #fff;
+            box-shadow: rgba(0, 0, 0, 0.438) 5px 5px 5px;
+        }
+        div{
+            text-align: center;
+            background-color: #7EC8E3;
+            padding: 5vh 0px;
+        }
+    </style>
+    <script>
+        function gerar_numeros(limite){
+            return Math.floor(Math.random() * limite + 1)
+        }
+        function atualizar_numeros(x){
+            var y
+            if (x == 1){
+                y = 6
+            }else if (x == 2){
+                y = 5
+            }   
+            var valores = []
+            var i = 0
+            while(i < y){
+                if (x == 1){
+                    var n = gerar_numeros(60)
+                }else if (x == 2){
+                    var n = gerar_numeros(80)
+                }
+                
+                var final
+                if (valores.indexOf(n.toString()) == -1){
+                    if (n < 10){
+                        final = '0' + n
+                    }else{
+                        final = n.toString()
+                    }
+                    valores.push(final)
+                    i += 1
+                }
+            }
+            valores.sort().reverse()
+            var id
+            for(i = 1;i <= y;++i){
+                if (x == 1){
+                    id = 's'+i
+                }else if (x == 2){
+                    id = 'q'+i
+                }
+                document.getElementById(id).innerHTML = valores.pop()
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>MEGA-SENA</h1>
+    <div>
+        <p id="s1">00</p>
+        <p id="s2">00</p>
+        <p id="s3">00</p>
+        <p id="s4">00</p>
+        <p id="s5">00</p>
+        <p id="s6">00</p>
+    </div>
+    <button onclick="atualizar_numeros(1)">ATUALIZAR</button>
+    <h1>QUINA</h1>
+    <div>
+        <p id="q1">00</p>
+        <p id="q2">00</p>
+        <p id="q3">00</p>
+        <p id="q4">00</p>
+        <p id="q5">00</p>
+    </div>
+    <button onclick="atualizar_numeros(2)">ATUALIZAR</button>
+</body>
+</html>
